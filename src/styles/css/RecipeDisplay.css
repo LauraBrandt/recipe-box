@@ -1,0 +1,86 @@
+.recipe-display {
+  background: #ffffff;
+  background: linear-gradient(to bottom, #eff8ff, #eff8ff 10%, #ffffff 10%, #ffffff);
+  background-size: 100% 30px;
+  width: 70%;
+  margin: 2rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
+  @media screen and (max-width: 600px) {
+    .recipe-display {
+      width: 90%;
+      margin: 1rem auto; } }
+
+.recipe-display .display-header {
+  background-color: #dcc7a1;
+  border-radius: 10px 10px 0 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center; }
+
+.recipe-display .display-header .display-name {
+  text-align: center;
+  font-size: 2.1rem;
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3);
+  flex: 1; }
+  @media screen and (max-width: 600px) {
+    .recipe-display .display-header .display-name {
+      font-size: 2rem; } }
+
+.recipe-display .display-header .display-buttons button {
+  background-color: #D9C39A;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  margin: 0.3rem; }
+
+.recipe-display .display-ingredients h4, .recipe-display .display-directions h4 {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 1rem 0; }
+
+@media screen and (max-width: 600px) {
+  .recipe-display .display-ingredients ul {
+    padding-left: 1.5rem; } }
+
+.recipe-display .display-ingredients ul li {
+  padding: 0.15rem 0;
+  font-size: 1.1rem;
+  text-indent: 0.4rem;
+  list-style-type: circle; }
+
+@media screen and (max-width: 600px) {
+  .recipe-display .display-directions ol {
+    padding-left: 0.7rem; } }
+
+.recipe-display .display-directions ol li {
+  padding: 0.4rem 0;
+  font-size: 1.1rem; }
+
+.recipe-display .display-header .display-name {
+  font-family: 'Rancho';
+  letter-spacing: 0.02em; }
+
+.recipe-display .display-header .display-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+  .recipe-display .display-header .display-buttons button.delete {
+    color: #c77373; }
+    .recipe-display .display-header .display-buttons button.delete:hover, .recipe-display .display-header .display-buttons button.delete:active {
+      color: #bf4849; }
+  .recipe-display .display-header .display-buttons button.edit {
+    color: #7b9ab5; }
+    .recipe-display .display-header .display-buttons button.edit:hover, .recipe-display .display-header .display-buttons button.edit:active {
+      color: #4182BC; }
+
+.recipe-display .display-ingredients {
+  padding: 1rem 3rem 0.5rem 2rem; }
+
+.recipe-display .display-directions {
+  padding: 0 3rem 0.5rem 2rem; }
+  @media screen and (max-width: 600px) {
+    .recipe-display .display-directions {
+      padding: 0 1.5rem 0.5rem 2rem; } }

@@ -1,0 +1,131 @@
+@import 'placeholders';
+
+.recipe-editor {
+  @extend %container-placeholder;
+
+  .editor-header {
+    @extend %header-placeholder;
+    padding: 0.5rem;
+    .editor-name {
+      @extend %name-placeholder;
+      label {
+        font-size: 1.3rem;
+      }
+      input {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        margin-left: 0.5rem;
+        width: 80%;
+        @media screen and (max-width: $break-small) {
+          font-size: 1.2rem;
+          width: 80%;
+        }
+      }
+    }
+    .editor-buttons {
+      button {
+        @extend %title-buttons-placeholder;
+        &.save {
+          color: lighten($blue, 10%);
+          font-size: 1.4rem;
+          background-color: white;
+          padding: 0.2em 0.4em;
+          margin: 1rem;
+          border: 1px solid rgba(0,0,0,0.2);
+          &:hover {
+            background-color: $light;
+          }
+          &:focus {
+            outline: none;
+            color: $blue;
+          }
+          &:active {
+            transform: translate(1px, 1px);
+          }
+        }
+      }
+    }
+  }
+
+  .editor-ingredients {
+    padding: 1rem 3rem 0.5rem 2rem;
+    @media screen and (max-width: $break-smallest) {
+      padding: 1rem 1rem 0.5rem 1rem;
+    }
+    h4 {
+      @extend %subheaders-placeholder;
+    }
+    ul {
+      @extend %ingredients-ul-placeholder;
+      li {
+        text-indent: 0.2rem;
+        @media screen and (max-width: $break-smallest) {
+          padding: 0;
+        }
+        input {
+          width: 80%;
+          font-size: 0.9rem;
+        }
+        button {
+          color: $red;
+          border: none;
+          background: none;
+          cursor: pointer;
+          font-size: 1rem;
+        }
+      }
+    }
+    .new-ingredient {
+      @extend %editor-add-button;
+    }
+  }
+
+  .editor-directions {
+    padding: 0 3rem 2rem 2rem;
+    @media screen and (max-width: $break-small) {
+      padding: 0 1.5rem 2rem 2rem;
+    }
+    h4 {
+      @extend %subheaders-placeholder;
+    }
+    ol {
+      @extend %directions-ol-placeholder;
+      counter-reset: section;
+      padding-left: 1rem;
+      @media screen and (max-width: $break-smallest) {
+        padding-left: 0;
+      }
+      li {
+        text-indent: 0.2rem;
+        display: flex;
+        align-items: center;
+        &:before {
+          counter-increment: section;
+          content: counter(section) "."; 
+        }
+        textarea {
+          width: 80%;
+          height: 40px;
+          font-size: 0.9rem;
+          flex: 1;
+          margin-left: 1rem;
+          margin-right: 1rem;
+          @media screen and (max-width: $break-smallest) {
+            margin-left: 0.3rem;
+            margin-right: 0;
+          }
+        }
+        button {
+          color: $red;
+          border: none;
+          background: none;
+          cursor: pointer;
+          font-size: 1rem;
+        }
+      }
+    }
+    .new-step {
+      @extend %editor-add-button;
+    }
+  }
+}

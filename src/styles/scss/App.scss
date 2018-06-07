@@ -1,0 +1,64 @@
+@import './RecipeDisplay';
+@import './RecipeEditor';
+@import './RecipeList';
+@import 'variables';
+
+.app {
+  background: url('https://s3.amazonaws.com/laurabrandt/recipe-box/checks-938538_1280.jpg');
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+  position: relative;
+}
+
+.app-header {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: $blue;
+  border: 1px solid $blue;
+  color: white;
+  font-family: 'Rancho', sans-serif;
+  font-size: 1.5rem;
+  box-shadow: 5px 0 10px rgba(0,0,0,0.5);
+  @media screen and (max-width: $break-small) {
+    font-size: 1.3rem;
+  }
+  h1 {
+    margin: 0;
+    padding: 0.5em;
+    letter-spacing: 0.05em;
+  }
+}
+
+.app-recipe-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: $footer-height;
+  @media screen and (max-width: $break-small) {
+    flex-direction: column;
+    padding-bottom: $footer-height + 20px;
+  }
+}
+
+.app-footer {
+  background-color: $blue;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  height: $footer-height; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #eaeaea;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  @media screen and (max-width: $break-small) {
+    height: $footer-height + 20px;
+  }
+}

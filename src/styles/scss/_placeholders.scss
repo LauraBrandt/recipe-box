@@ -1,0 +1,85 @@
+%container-placeholder {
+  background: #ffffff;
+  background: linear-gradient(
+    to bottom,
+    lighten($light-blue, 6%),
+    lighten($light-blue, 6%) 10%,
+    #ffffff 10%,
+    #ffffff
+  );
+  background-size: 100% 30px;
+  width: 70%;
+  margin: 2rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  @media screen and (max-width: $break-small) {
+    width: 90%;
+    margin: 1rem auto;
+  }
+}
+
+%header-placeholder {
+  background-color: lighten($straw, 2%);
+  border-radius: 10px 10px 0 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+%name-placeholder {
+  text-align: center;
+  font-size: 2.1rem;
+  text-shadow: 1px 1px 5px rgba(255,255,255,0.3);
+  flex: 1;
+  @media screen and (max-width: $break-small) {
+    font-size: 2rem;
+  }
+}
+
+%title-buttons-placeholder {
+  background-color: $straw;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  margin: 0.3rem;
+}
+
+%subheaders-placeholder {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+%ingredients-ul-placeholder {
+  @media screen and (max-width: $break-small) {
+    padding-left: 1.5rem;
+  }
+  li {
+    padding: 0.15rem 0;
+    font-size: 1.1rem;
+    text-indent: 0.4rem;
+    list-style-type: circle;
+  }
+}
+
+%directions-ol-placeholder {
+  @media screen and (max-width: $break-small) {
+    padding-left: 0.7rem;
+  }
+  li {
+    padding: 0.4rem 0;
+    font-size: 1.1rem;
+  }
+}
+
+%editor-add-button {
+  display: block;
+  background: $light;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.5rem;
+  margin-left: 2rem;
+  cursor: pointer;
+}

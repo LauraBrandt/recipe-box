@@ -1,0 +1,113 @@
+@import 'variables';
+
+.recipe-list {
+  width: 30%;
+  margin: 2rem;
+  @media screen and (max-width: $break-small) {
+    width: 90%;
+    margin: 1rem auto;
+    padding-right: 1em;
+  }
+  ul {
+    background-color: $light;
+    list-style-type: none;
+    padding: 1em 0;
+    position: relative;
+    border: 4px solid $straw;
+    &:after { 
+      width: calc(100% + 6px);
+      height: 50px;
+      transform: skew(20deg);
+      background: darken($straw, 10%);
+      position: absolute;
+      content: "";
+      bottom: -50px;
+      left: 4px;
+      box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    }
+    &:before { 
+      width: 17px;
+      height: calc(100% + 7px);
+      background: darken($straw, 3%);
+      position: absolute;
+      transform: skewY(70deg);
+      content: "";
+      top: 23px;
+      right: -20px;
+      box-shadow: 3px 0 5px rgba(0,0,0,0.1);
+    }
+    li {
+      margin: -0.4rem 0;
+      padding: 0 0.5em 0 0.5em;
+      border-bottom: $list-border;
+      button {
+        padding: 0.6rem;
+        background: #fff;
+        background: linear-gradient(#fff 70%, #fff 70%, $light 100%);
+        font-size: 1rem;
+        font-family: inherit;
+        cursor: pointer;
+        border: $list-border;
+        border-bottom: 1px solid $light;
+        border-radius: 5px 5px 0 0;
+        display: block;
+        margin-bottom: -1px;
+        box-shadow: 1px -1px 2px 0 rgba(0,0,0,0.15);
+        &:hover, &:active, &:focus {
+          outline: none;
+          background: $light;
+          color: $blue;
+        }
+      }
+      &:nth-child(3n+1) {
+        button {
+          margin-right: auto;
+        }
+      }
+      &:nth-child(3n+2) {
+        button {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      &:nth-child(3n+3) {
+        button {
+          margin-left: auto;
+        }
+      }
+      &.current {
+        button {
+          background: linear-gradient($light-blue 90%, $light-blue 95%, $light 100%);
+        }
+      }
+    }
+  }
+
+  .recipe-list-add-button {
+    display: block;
+    margin: 60px auto;
+    border: 3px solid $straw;
+    border-radius: 10px;
+    background-color: $blue;
+    color: white;
+    font-size: 1.1rem;
+    font-family: inherit;
+    padding: 0.7rem;
+    cursor: pointer;
+    &:hover {
+      background-color: darken($blue, 6%);
+    }
+    &:focus {
+      outline: none;
+      background-color: darken($blue, 3%);
+    }
+    &:active {
+      border: 4px solid $straw;
+      padding: 0.65rem;
+      background-color: darken($blue, 3%);
+    }
+    @media screen and (max-width: $break-small) {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import 'variables';
+@import 'placeholders';
+
+.recipe-display {
+  @extend %container-placeholder;
+
+  .display-header {
+    @extend %header-placeholder;
+    .display-name {
+      @extend %name-placeholder;
+      font-family: 'Rancho';
+      letter-spacing: 0.02em;
+    }
+    .display-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        @extend %title-buttons-placeholder;
+        &.delete {
+          color: lighten(desaturate($red, 45%), 10%);
+          &:hover, &:active {
+            color: desaturate($red, 40%);
+          }
+        }
+        &.edit {
+          color: lighten(desaturate($blue, 20%), 10%);
+          &:hover, &:active {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+
+  .display-ingredients {
+    padding: 1rem 3rem 0.5rem 2rem;
+    h4 {
+      @extend %subheaders-placeholder;
+    }
+    ul {
+      @extend %ingredients-ul-placeholder
+    }
+  }
+
+  .display-directions {
+    padding: 0 3rem 0.5rem 2rem;
+    @media screen and (max-width: $break-small) {
+      padding: 0 1.5rem 0.5rem 2rem;
+    }
+    h4 {
+      @extend %subheaders-placeholder;
+    }
+    ol {
+      @extend %directions-ol-placeholder
+    }
+  }
+}
