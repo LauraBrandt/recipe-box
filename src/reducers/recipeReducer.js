@@ -1,8 +1,10 @@
 import { FETCH_RECIPE, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE, SAVE_RECIPE } from '../actions/types';
 import { recipeList } from '../data';
 
+const defaultRecipeList = JSON.parse(localStorage.getItem('recipes')) || recipeList;
+
 const initialState = {
-  recipeList: recipeList,
+  recipeList: defaultRecipeList,
   currentRecipe: {},
   isEditing: false,
   recipeToEdit: {},
@@ -38,6 +40,7 @@ export default function(state = initialState, action) {
           directions: action.payload.directions
         }
         const newRecipeList = state.recipeList.concat(newRecipe);
+        localStorage.setItem('recipes', JSON.stringify(newRecipeList));
         return Object.assign({}, state, {
           isEditing: false,
           recipeToEdit: {},
@@ -53,10 +56,12 @@ export default function(state = initialState, action) {
         }
         const currIndex = state.recipeList.findIndex(recipe => recipe.id === currRecipe.id);
         const newRecipeList = [...state.recipeList.slice(0, currIndex), currRecipe, ...state.recipeList.slice(currIndex + 1)];
+        localStorage.setItem('recipes', JSON.stringify(newRecipeList));
         return Object.assign({}, state, { 
           isEditing: false,
           recipeToEdit: {},
-          recipeList : newRecipeList 
+          recipeList : newRecipeList,
+          currentRecipe: currRecipe
         });
       } else {
         return state;
@@ -72,6 +77,7 @@ export default function(state = initialState, action) {
         }
       });
       index = index >= remainingRecipes.length ? remainingRecipes.length - 1 : index;
+      localStorage.setItem('recipes', JSON.stringify(remainingRecipes));
       return Object.assign({}, state, { 
         recipeList: remainingRecipes,
         currentRecipe: remainingRecipes[index]
